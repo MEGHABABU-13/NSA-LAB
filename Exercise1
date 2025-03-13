@@ -1,0 +1,32 @@
+developer@ccfl6-pc12:~/meghamca$ cd ..
+developer@ccfl6-pc12:~$  mkdir -p Project34/Payroll/../Sales/RegionA/../RegionB
+touch Project34/Payroll/Checks.dat Project34/Payroll/Pay2.dat  Project34/Sales/RegionA/East.dat  Project34/Sales/RegionB/west1.dat  Project34/Sales/RegionB/west2.dat Project34/Sales/RegionB/west3.dat
+developer@ccfl6-pc12:~$ cd Project34/Payroll/Checks.dat
+bash: cd: Project34/Payroll/Checks.dat: Not a directory
+developer@ccfl6-pc12:~$ cd Project34/Payroll
+developer@ccfl6-pc12:~/Project34/Payroll$ cat > Checks.dat
+This is checks.dat file        
+aa
+b
+dd
+c
+oo
+^C
+developer@ccfl6-pc12:~/Project34/Payroll$ cat > Pay2.dat
+This is Pay2.dat file
+pay1
+wall  
+paints
+perform
+^C
+developer@ccfl6-pc12:~/Project34/Payroll$ cd ..
+developer@ccfl6-pc12:~/Project34$ cd Sales/RegionA
+developer@ccfl6-pc12:~/Project34/Sales/RegionA$ cat> East.dat
+orange
+apple
+guava
+melon
+^C
+developer@ccfl6-pc12:~/Project34/Sales/RegionA$ cd ..
+developer@ccfl6-pc12:~/Project34/Sales$ 
+
