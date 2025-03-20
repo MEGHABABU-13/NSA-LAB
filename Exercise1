@@ -30,3 +30,44 @@ melon
 developer@ccfl6-pc12:~/Project34/Sales/RegionA$ cd ..
 developer@ccfl6-pc12:~/Project34/Sales$ 
 
+
+
+
+EXERCICE 1
+
+developer@ccfl6-pc12:~$ cp Project34/Payroll/Pay2.dat Project34/Sales/RegionA
+
+developer@ccfl6-pc12:~/Project34/Sales/RegionA$ ls
+East.dat  Pay2.dat
+
+
+developer@ccfl6-pc12:~$ cp Project34/Payroll/Pay2.dat Project34/Sales/RegionB
+
+developer@ccfl6-pc12:~/Project34/Sales/RegionB$ ls
+Pay2.dat  west1.dat  west2.dat  west3.dat
+
+
+developer@ccfl6-pc12:~$ mv Project34/Sales/RegionB/west3.dat Project34/Sales/RegionA/East1.dat
+
+developer@ccfl6-pc12:~$ ls Project34/Sales/RegionA/East1.dat
+Project34/Sales/RegionA/East1.dat
+
+developer@ccfl6-pc12:~$ paste Project34/Payroll/Checks.dat Project34/Payroll/Pay2.dat|cat >>Project34/Payroll/Payment.dat
+developer@ccfl6-pc12:~$ cat Project34/Payroll/Payment.dat
+This is checks.dat file	This is Pay2.dat file
+aa	pay1
+b	wall
+dd	paints
+c	perform
+oo	
+
+
+
+
+developer@ccfl6-pc12:~$ find Project34/Sales -type f|wc -l
+6
+
+
+
+
+
