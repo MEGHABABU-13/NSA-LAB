@@ -1,0 +1,58 @@
+if-statement
+
+a=10
+b=15
+if [ $a -gt $b ];then
+echo "a is greater"
+else
+echo "b is greater"
+fi
+
+
+for-statement
+
+
+for i in 1 2 3 4 5;do
+echo "Number:$i"
+done
+
+for color in red blue green;do
+echo "color:$color"
+done
+
+for color in red blue green
+do
+echo "color:$color"
+done
+
+for((i=1;i<=5;i++))
+do
+echo "i=$i"
+done
+
+
+array
+
+arr=(apple orange grapes cherry)
+for item in "${arr[@]}";do
+echo "$item"
+done
+
+
+calculator
+echo enter 4 numbers
+read a b c d
+((sum=a+b+c+d))
+echo $sum
+
+((product=a*b*c*d))
+echo $product
+
+avg=$(expr $sum/4 | bc -l)
+echo $avg
+
+((avg=sum/4))
+echo $avg
+
+avg=$(echo "scale=2; $sum/4"| bc -l)
+echo "Average=$avg"
