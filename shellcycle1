@@ -25,8 +25,12 @@ a) Write a program to check whether a number entered is odd or even.
 b) Write a shell script to print given number in reverse order
 c) Write a shell script to print sum of all digits of a given number
 
-a)
-echo Enter a number:
+echo "Enter option between 1 and 3:"
+read n
+case $n in
+
+1)
+echo "Enter number:"
 read a
 if(($a == 0 ))then
   echo "The number is zero"
@@ -35,17 +39,31 @@ echo "The number is even"
 else
 echo "The number is odd"
 fi
+;;
 
-output
+2)
+rev_num=$(echo $num | rev)
+echo "Reverse of number is:$rev_num"
+;;
 
-developer@ccfl6-pc12:~/meghamca/shell$ bash q2.sh
-Enter a number:
-54
-The number is even
+3)
+echo "Enter number:"
+read num
+while (($num > 0))
+do
+sum=$((sum + num % 10))
+num=$((num/10))
+done
+echo "Sum of digits:$sum"
+;;
+4)
+echo"Invalid"
+;;
+esac
 
-b)
+3)Write a shell script that accepts any year from the keyboard and determine
+whether the year is a leap year or not.
 
-c)
 echo "Enter a year:"
 read year
 if (($year % 4 == 0))then
@@ -72,4 +90,20 @@ developer@ccfl6-pc12:~/meghamca/shell$ bash q2c.sh
 Enter a year:
 2032
 2032 is a leap year.
+
+4)
+echo "Enter number:"
+read num
+factorial=1
+for ((i=1; i<=num; i++)); do
+factorial=$(echo "$factorial * $i" | bc)
+done
+echo "Factorial of $num is: $factorial"
+
+output
+
+developer@ccfl6-pc12:~/meghamca/shell$ bash q4.sh
+Enter number:
+5
+Factorial of 5 is: 120
 
