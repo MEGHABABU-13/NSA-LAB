@@ -1,0 +1,16 @@
+echo enter 4 numbers
+read a b c d
+((sum=a+b+c+d))
+echo $sum
+
+((product=a*b*c*d))
+echo $product
+
+avg=$(expr $sum/4 | bc -l)
+echo $avg
+
+((avg=sum/4))
+echo $avg
+
+avg=$(echo "scale=2; $sum/4"| bc -l)
+echo "Average=$avg"
