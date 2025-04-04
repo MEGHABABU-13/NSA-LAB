@@ -107,3 +107,35 @@ Enter number:
 5
 Factorial of 5 is: 120
 
+5)Write a program to print prime numbers from 1 to 100
+
+echo "Prime numbers between 1 and 100:"
+for (( num=2; num<=100; num++ ))
+do
+is_prime=1
+for (( i=2; i<=num/2; i++ ))
+do
+if (($num % i==0))
+then
+is_prime=0
+break
+fi
+done
+if ((is_prime ==1))
+then
+echo -n "$num "
+fi
+done
+echo
+
+output
+developer@ccfl6-pc12:~/meghamca/shell$ bash q5.sh
+Prime numbers between 1 and 100:
+2 3 5 7 11 13 17 19 23 29 31 37 41 43 47 53 59 61 67 71 73 79 83 89 97 
+
+
+8)Write a shell script to find the number of occurrences of a particular digit in a
+given number.
+
+
+
