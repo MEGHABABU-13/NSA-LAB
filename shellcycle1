@@ -234,4 +234,69 @@ Enter a number to find:
 input. (Eg: Input: 1234567, Ans: 1,3,5,7)
 
 
+pos=1
+i=0
+echo "Enter a number: "
+read number 
+
+echo "Numbers are: $number"
+while ((number > 0)); do
+    digit=$((number % 10))
+
+    if ((pos % 2 == 1)); then
+        a[$i]=$digit     
+        ((i++))
+    fi
+
+    number=$((number / 10))
+    ((pos++))
+done
+
+echo "Alternate nubers:"
+for ((k = i - 1; k >= 0; k--)); do
+    echo -n "${a[$k]} "
+done
+
+output
+developer@ccfl6-pc12:~/meghamca/shell$ bash q9.sh
+Enter a number: 
+1234567
+Numbers are: 1234567
+Alternate nubers:
+1 3 5 7 
+
+q10)Write a shell script that takes a command line argument and displays the
+details depending on whether the argument is a directory, a file, or something
+else.
+if [ $# -eq 0 ];then
+	echo "file name : $0"	
+	exit 1
+fi	
+content=$1	
+
+if [ -d $content ];then
+	echo "$content is a directory"
+	
+elif [ -f $content ];then
+	echo "$content is a file"	
+	
+else 
+	echo "$content is something"	
+fi	
+
+output
+
+developer@ccfl6-pc12:~/meghamca/shell$ bash q10.sh
+file name : q10.sh
+developer@ccfl6-pc12:~/meghamca/shell$ bash q10.sh newdir
+newdir is a directory
+developer@ccfl6-pc12:~/meghamca/shell$ bash q10.sh output
+output is a file
+developer@ccfl6-pc12:~/meghamca/shell$ bash q10.sh kkaks
+kkaks is something
+developer@ccfl6-pc12:~/meghamca/shell$ bash q9.sh
+
+
+
+
 
